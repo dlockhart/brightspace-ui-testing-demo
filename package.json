@@ -1,0 +1,34 @@
+{
+  "name": "brightspace-ui-testing-demo",
+  "description": "A project used for demonstrating the @brightspace-ui/testing library",
+  "type": "module",
+  "repository": "https://github.com/dlockhart/brightspace-ui-testing-demo.git",
+  "scripts": {
+    "lint": "npm run lint:eslint && npm run lint:style",
+    "lint:eslint": "eslint . --ext .js,.html",
+    "lint:style": "stylelint \"**/*.{js,html}\"",
+    "start": "web-dev-server --app-index demo/index.html --node-resolve --open --watch",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "d2l-test-runner"
+  },
+  "author": "D2L Corporation",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@brightspace-ui/stylelint-config": "^0.8",
+    "@brightspace-ui/testing": "^1",
+    "@web/dev-server": "^0.3",
+    "eslint": "^8",
+    "eslint-config-brightspace": "^0.25",
+    "stylelint": "^15"
+  },
+  "files": [
+    "src/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@brightspace-ui/core": "^2",
+    "lit": "^2"
+  }
+}
