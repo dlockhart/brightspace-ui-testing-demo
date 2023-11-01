@@ -69,7 +69,7 @@ class Calculator extends LocalizeMixin(LitElement) {
 			
 			input {
 				background-color: #74dbe6;
-				border: 3px solid #5DB0BB;
+				border: 3px solid #5db0bb;
 				margin-bottom: 40px;
 				text-align: right;
 			}
