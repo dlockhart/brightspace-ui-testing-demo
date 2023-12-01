@@ -23,12 +23,12 @@ class Calculator extends LocalizeMixin(LitElement) {
 				grid-gap: 15px;
 				grid-template-areas:
 					"input input input input"
-					"clear clear divide multiply"
-					"seven eight nine subtract"
-					"four five six add"
-					"one two three equal"
+					"clear clear backspace divide"
+					"seven eight nine multiply"
+					"four five six subtract"
+					"one two three add"
 					"zero zero decimal equal";
-				grid-template-columns: repeat(4, 1fr);
+				grid-template-columns: repeat(4, minmax(0, 1fr));
 				min-width: 300px;
 				padding: 30px;
 			}
@@ -39,7 +39,7 @@ class Calculator extends LocalizeMixin(LitElement) {
 				border-radius: 15px;
 				font-size: 1.5rem;
 				font-weight: bold;
-				padding: 10px 20px;
+				padding: 10px 0;
 			}
 			button:disabled {
 				opacity: 0.1;
@@ -71,6 +71,7 @@ class Calculator extends LocalizeMixin(LitElement) {
 				background-color: #74dbe6;
 				border: 3px solid #5db0bb;
 				margin-bottom: 40px;
+				padding: 10px 20px;
 				text-align: right;
 			}
 		`;
@@ -80,6 +81,7 @@ class Calculator extends LocalizeMixin(LitElement) {
 		super();
 		this.keys = [
 			{ value: 'clear', term: 'clear', area: 'clear', action: () => this._reset() },
+			{ value: 'ce', area: 'backspace', aliasKey: 'Backspace', action: () => this.value = this.value.slice(0, -1) },
 			{ value: '/', area: 'divide' },
 			{ value: '*', area: 'multiply' },
 			{ value: '7', area: 'seven' },

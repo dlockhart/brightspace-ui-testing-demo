@@ -3,9 +3,9 @@ import { expect, fixture, html } from '@brightspace-ui/testing';
 
 describe('fixture', () => {
 
-	it('should render 17 buttons', async() => {
+	it('should render 18 buttons', async() => {
 		const elem = await fixture(html`<d2l-demo-calculator></d2l-demo-calculator>`);
-		expect(elem.shadowRoot.querySelectorAll('button').length).to.equal(17);
+		expect(elem.shadowRoot.querySelectorAll('button').length).to.equal(18);
 	});
 
 	it('should support French', async() => {
